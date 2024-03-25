@@ -1,0 +1,26 @@
+type User = principal;
+type Info = 
+ record {
+   activity: text;
+   description: text;
+   name: text;
+   note: text;
+ };
+type DatosFecha = 
+ record {
+   day: nat;
+   id: nat;
+   month: nat;
+   year: nat;
+ };
+service : {
+  deleteActivity: (principal, text) -> (bool);
+  getActivity: (principal, text) -> (opt Info);
+  getActivitys: (User) -> (vec record {
+                                 text;
+                                 Info;
+                               }) query;
+  getUser: () -> (principal);
+  saveActivity: (DatosFecha, Info) -> (Info);
+  updateActivity: (principal, text, Info) -> (bool);
+}

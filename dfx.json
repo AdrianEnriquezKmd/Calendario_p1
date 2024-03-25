@@ -1,0 +1,30 @@
+{
+  "canisters": {
+    "Calendario_p1_backend": {
+      "main": "src/Calendario_p1_backend/main.mo",
+      "type": "motoko"
+    },
+    "Calendario_p1_frontend": {
+      "dependencies": [
+        "Calendario_p1_backend"
+      ],
+      "frontend": {
+        "entrypoint": "src/Calendario_p1/index.html"
+      },
+      "source": [
+        "dist/Calendario_p1_frontend/",
+        "src/Calendario_p1_frontend/assets"
+      ],
+      "type": "assets",
+      "workspace": "Calendario_p1_frontend"
+    }
+  },
+  "defaults": {
+    "build": {
+      "args": "",
+      "packtool": ""
+    }
+  },
+  "output_env_file": ".env",
+  "version": 1
+}
